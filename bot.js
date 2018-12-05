@@ -9,8 +9,7 @@ let opts = {
     password: process.env.BOT_OAUTH 
   },
   channels: [
-    //process.env.CHANNEL
-    'mauerbac'
+    process.env.CHANNEL
   ]
 }
 
