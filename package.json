@@ -19,8 +19,8 @@
   },
   "license": "MIT",
   "keywords": [
-    "node",
-    "glitch",
-    "express"
+    "twitch",
+    "chatbots",
+    "irc"
   ]
 }
