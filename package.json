@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "tmi.js": "^1.2.1",
+    "tmi.js": "^1.2.1"
   },
   "engines": {
     "node": "8.x"
