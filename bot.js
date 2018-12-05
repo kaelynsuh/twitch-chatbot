@@ -80,4 +80,6 @@ const app = express();
 
 var listener = app.listen(process.env.PORT, function() {
   console.log('Listening on port ', + listener.address().port);
+  // display
+  app.get('/', (req, res) => res.send('Hello World!'))
 });

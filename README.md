@@ -27,13 +27,13 @@ You will need:
 ### Building the bot
 
 
-1. Install [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/)
+1. Glitch automatically installs Node, Express and tmi.js for us
 
-2. Using npm, install tmi.js 
+2. Add the three environmental vars in our `.env` file
 
-    `npm install tmi.js`
+3. View the code in `bot.js` 
 
-3. View and replace the three variables in `bot.js`. 
+3. Your chatbot is ready to run! Glitch automatically deploys & runs each version. View the status 
 
 4. Run `bot.js`. This can be run locally using Node.
 
