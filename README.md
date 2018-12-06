@@ -39,12 +39,12 @@ You will need:
 
 6. Try the chatbot! Interact with your channel (twitch.tv/<CHANNEL_NAME>) by trying  the `!echo` command. 
 
-Note: This bot connects to the IRC network as a client and isn't designed to respond over HTTP. If you click "Show Live" you will see a simple "Hello World"
+**Note**: This bot connects to the IRC network as a client and isn't designed to respond over HTTP. If you click "Show Live" you will see a simple "Hello World"
 
 
 ## Next Steps
 
 * Read [Chatbots & IRC documentation](https://dev.twitch.tv/docs/irc/guide/).
-* Reach out to [@twitchdev]() or the [forums] for help!
+* Reach out to [@twitchdev](https://twitter.com/twitchdev) or the [forums](https://discuss.dev.twitch.tv/) for help!
 
 
