@@ -27,28 +27,20 @@ You will need:
 ### Building the bot
 
 
-1. Glitch automatically installs Node, Express and tmi.js for us.
+1. To start with this template, click the Remix button in the upper right. 
 
-2. Add the three environmental vars in our [`.env`](https://glitch.com/edit/#!/twitch-chatbot?path=.env:1:0) file.
+2. Glitch automatically installs Node, Express and Tmi.js for us.
 
-3. View the code in `bot.js`. 
+3. Add the three environmental vars in our [`.env`](https://glitch.com/edit/#!/twitch-chatbot?path=.env:1:0) file.
 
-4. Your chatbot is ready to run! Glitch automatically deploys & runs each version. View the status button to ensure there are no errors. Note: this bot connects to the IRC network as a client and therefore 
+4. View the code in `bot.js`. 
 
-5. 
+5. Your chatbot is ready to run! Glitch automatically deploys & runs each version. View the status button to ensure there are no errors. 
 
+6. Try the chatbot! Interact with your channel (twitch.tv/<CHANNEL_NAME>) by trying  the `!echo` command. 
 
+Note: This bot connects to the IRC network as a client and isn't designed to respond over HTTP. If you click "Show Live" you will see a simple "Hello World"
 
-You can also run this remotely using Glitch.
-
-5. Now that the bot is running and connected to Twitch's IRC network we can interact with it. On twitch.tv/<CHANNEL_NAME>, try using the `!echo` command. 
-
-`!echo testing my chatbot` 
-
-
-### Using Glitch
- 
-Glitch lets you instantly create, edit, and host an app in the cloud. The code for this tutorial is already live and can be accessed here. Simply, put in your credentials and click run.
 
 ## Next Steps
 

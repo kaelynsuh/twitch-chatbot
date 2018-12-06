@@ -1,6 +1,4 @@
 {
-  "//1": "Getting started guide for Chatbots",
-  "//2": "https://dev.twitch.tv/docs/irc/",
   "name": "twitch-chatbot",       
   "version": "0.0.1",
   "description": "A simple app chatbot example. Using the command !echo will simply repeat the message.",
