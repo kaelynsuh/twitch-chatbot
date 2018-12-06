@@ -27,17 +27,17 @@ You will need:
 ### Building the bot
 
 
-1. Glitch automatically installs Node, Express and tmi.js for us
+1. Glitch automatically installs Node, Express and tmi.js for us.
 
-2. Add the three environmental vars in our `.env` file
+2. Add the three environmental vars in our [`.env`](https://glitch.com/edit/#!/twitch-chatbot?path=.env:1:0) file.
 
-3. View the code in `bot.js` 
+3. View the code in `bot.js`. 
 
-3. Your chatbot is ready to run! Glitch automatically deploys & runs each version. View the status 
+4. Your chatbot is ready to run! Glitch automatically deploys & runs each version. View the status button to ensure there are no errors. Note: this bot connects to the IRC network as a client and therefore 
 
-4. Run `bot.js`. This can be run locally using Node.
+5. 
 
-`node bot.js`
+
 
 You can also run this remotely using Glitch.
 
