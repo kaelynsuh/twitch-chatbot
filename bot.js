@@ -13,17 +13,11 @@ let opts = {
   ]
 }
 
-// Function called when the "echo" command is issued:
-function echo (target, context, params) {
-  // If there's something to echo:
-  if (params.length) {
-    // Join the params into a string:
-    const msg = params.join(' ')
-    // Send it back to the correct place:
-    client.say(target, msg)
-  } else { // Nothing to echo
-    console.log(`* Nothing to echo`)
-  }
+// Function called when the "dice" command is issued:
+function rollDice () {
+  const sides = 6;
+  return randomNumber = Math.floor(Math.random() * sides) + 1;
+ 
 }
 
 // Create a client with our options:
@@ -51,12 +45,11 @@ function onMessageHandler (target, context, msg, self) {
   const parse = msg.slice(1).split(' ')
   // The command name is the first (0th) one:
   const commandName = parse[0]
-  // The rest (if any) are the parameters:
-  const params = parse.splice(1)
 
   // If the command is known, let's execute it:
-  if (commandName == 'echo') {
-    echo(target, context, params)
+  if (commandName == 'dice') {
+    const num = rollDice()
+    client.say(target, 'You rolled a $P)
     console.log(`* Executed ${commandName} command for ${context.username}`)
   } else {
     console.log(`* Unknown command ${commandName} from ${context.username}`)
