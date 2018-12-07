@@ -16,7 +16,7 @@ let opts = {
 // Function called when the "dice" command is issued:
 function rollDice () {
   const sides = 6;
-  return randomNumber = Math.floor(Math.random() * sides) + 1;
+  return Math.floor(Math.random() * sides) + 1
  
 }
 
@@ -37,7 +37,7 @@ function onMessageHandler (target, context, msg, self) {
 
   // This isn't a command since it has no prefix:
   if (msg.substr(0, 1) !== commandPrefix) {
-    console.log(`[${target} (${context['message-type']})] ${context.username}: ${msg}`)
+    console.log(`[${target} (${context['message-type']})] ${msg}`)
     return
   }
 
@@ -49,10 +49,10 @@ function onMessageHandler (target, context, msg, self) {
   // If the command is known, let's execute it:
   if (commandName == 'dice') {
     const num = rollDice()
-    client.say(target, 'You rolled a $P)
-    console.log(`* Executed ${commandName} command for ${context.username}`)
+    client.say(target, `You rolled a ${num}`)
+    console.log(`* Executed ${commandName} command`)
   } else {
-    console.log(`* Unknown command ${commandName} from ${context.username}`)
+    console.log(`* Unknown command ${commandName}`)
   }
 }
 
@@ -67,10 +67,10 @@ function onDisconnectedHandler (reason) {
   process.exit(1)
 }
 
-const express = require('express');
+const express = require('express')
 const app = express();
 
 var listener = app.listen(process.env.PORT, function() {
-  console.log('Listening on port ', + listener.address().port);
+  console.log('Listening on port ', + listener.address().port)
   app.get('/', (req, res) => res.send('Hello World!'))
 });
