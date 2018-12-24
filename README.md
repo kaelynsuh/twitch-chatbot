@@ -23,7 +23,7 @@ To start, you’ll need three environment variables:
 |`CHANNEL_NAME`   |  The Twitch channel name where you want to run the bot. Usually this is your main Twitch account.
 |`OAUTH_TOKEN`   |The token to authenticate your chatbot with Twitch's servers. Generate this with [https://twitchapps.com/tmi/](https://twitchapps.com/tmi/) (a Twitch community-driven wrapper around the Twitch API), while logged in to your chatbot account. The token will be an alphanumeric string.|  
 
-### Building the bot
+### Running the bot
 
 
 1. To start with this template, click the Remix button in the upper right. 
@@ -36,14 +36,16 @@ To start, you’ll need three environment variables:
 
 5. Your chatbot is ready to run! Glitch automatically deploys & runs each version. View the status button to ensure there are no errors. 
 
-6. Try the chatbot! Interact with your channel (twitch.tv/<CHANNEL_NAME>) by trying  the `!echo` command. 
+6. Try the chatbot! Interact with your channel (twitch.tv/<CHANNEL_NAME>) by trying  the `!dice` command. 
 
 **Note**: This bot connects to the IRC network as a client and isn't designed to respond over HTTP. If you click "Show Live" you will see a simple "Hello World"
 
 
 ## Next Steps
 
-* Read [Chatbots & IRC documentation](https://dev.twitch.tv/docs/irc/guide/).
-* Reach out to [@twitchdev](https://twitter.com/twitchdev) or the [forums](https://discuss.dev.twitch.tv/) for help!
+* For a thorough understanding of Twitch chatbots and IRC, read the [Chatbots & IRC Guide](https://dev.twitch.tv/docs/irc/guide/) and the rest of the Twitch IRC documentation. 
+* To authenticate your chatbot in a production setting, we recommend you [register your app](https://dev.twitch.tv/docs/authentication/#registration) (chatbot) and use the OAuth Authorization code flow. This enables you to authenticate programmatically. To learn more, read the [Apps & Authentication Guide](https://dev.twitch.tv/docs/authentication/).
+Read [Chatbots & IRC documentation](https://dev.twitch.tv/docs/irc/guide/).
+* Reach out to [@twitchdev](https://twitter.com/twitchdev) or the [Twitch chatbot forum](https://discuss.dev.twitch.tv/c/chat) for help!
 
 
