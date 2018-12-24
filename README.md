@@ -16,17 +16,12 @@ We’ll build a simple chatbot that responds in chat when someone types `!dice`.
 ### Get Environment Variables
 
 To start, you’ll need three environment variables:
-
-* `BOT_USERNAME` - The account (username) that the chatbot uses to send chat messages. This can be your Twitch account. Alternately, many developers choose to create a second Twitch account for their bot, so it's clear from whom the messages originate.
-* `OAUTH_TOKEN` - Generated using an Implicit grant flow. Use this [community tool](https://twitchapps.com/tmi/).
-* `CHANNEL_NAME` - The Twitch channel name where you want to run the bot.  
-
-
-| Variable  |   |   |   |   |
+ 
+| *Variable*  | *Description*   |
 |---|---|---|---|---|
-| BOT Username  |  fasdfasdffasd |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
+| `BOT_USERNAME`  |  The account (username) that the chatbot uses to send chat messages. This can be your Twitch account. Alternately, many developers choose to create a second Twitch account for their bot, so it's clear from whom the messages originate. |  
+|`CHANNEL_NAME`   |  The Twitch channel name where you want to run the bot. Usually this is your main Twitch account.
+|`OAUTH_TOKEN`   |The token to authenticate your chatbot with Twitch's servers. Generate this with [https://twitchapps.com/tmi/](https://twitchapps.com/tmi/) (a Twitch community-driven wrapper around the Twitch API), while logged in to your chatbot account. The token will be an alphanumeric string.|  
 
 ### Building the bot
 
