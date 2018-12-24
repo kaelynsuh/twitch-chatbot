@@ -1,13 +1,15 @@
-# Twitch Chatbot Getting Started 
+# Twitch Getting Started with Chatbots & IRC
 =================
 
 ## Chatbot Overview
 
-Twitch offers an IRC interface to chat functionality. Chatbots allow you to programmatically interact with a chat feed using IRC standards. The bot will then connect to Twitch's IRC network as a client and begin performing actions. 
+Twitch offers an Internet Relay Chat (IRC) interface for chat functionality. Chatbots allow you to programmatically interact with a Twitch chat feed using IRC standards; the bot connects to the Twitch IRC network as a client to perform these actions.This guide presents an easy bot example to get you started.
 
-### Authentication
+### Building the Bot
 
-Authenticating your chatbot with Twitch's servers is required. In a production setting, you should [register your app](https://dev.twitch.tv/docs/authentication/#registration) and use the standard Authorization code flow. In this guide, for the sake of getting started quickly, we generate an OAuth token directly using a community [tool](https://twitchapps.com/tmi/). You can read more about authentication [here](https://dev.twitch.tv/docs/authentication/). 
+We’ll build a simple chatbot that responds in chat when someone types `!dice`. (This is known as a chatbot command.) When triggered, it randomly generates a number between 1-6. We run the fully-functioning chatbot on this Glitch,  as well as show you how to run locally on our [Developer Docs](https://dev.twitch.tv/docs/irc/).
+
+![example-screenshot](chatbots-1.png)
 
 
 ## Basic Chatbot
