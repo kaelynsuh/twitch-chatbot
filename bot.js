@@ -6,10 +6,10 @@ let commandPrefix = '!'
 let opts = {
   identity: {
     username: process.env.BOT_USERNAME,
-    password: process.env.BOT_OAUTH 
+    password: process.env.OAUTH_TOKEN 
   },
   channels: [
-    process.env.CHANNEL
+    process.env.CHANNEL_NAME
   ]
 }
 
