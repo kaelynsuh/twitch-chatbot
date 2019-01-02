@@ -28,7 +28,7 @@ To start, you’ll need three environment variables:
 
 1. To start with this template, click the Remix button in the upper right. 
 
-2. Glitch automatically installs Node, Express and Tmi.js for us.
+2. Glitch automatically installs Node and Tmi.js for us.
 
 3. Add the three environmental vars in our [`.env`](https://glitch.com/edit/#!/twitch-chatbot?path=.env:1:0) file.
 
