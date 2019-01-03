@@ -12,7 +12,7 @@ const opts = {
 };
 
 // Create a client with our options
-const client = new tmi.Client(opts);
+const client = new tmi.client(opts);
 
 // Register our event handlers (defined below)
 client.on('message', onMessageHandler);
