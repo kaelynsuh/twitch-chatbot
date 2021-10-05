@@ -34,54 +34,54 @@ function onMessageHandler(target, context, msg, self) {
 
   // Remove whitespace from chat message
   const commandName = msg.trim();
+  const kaeId = 513203757;
+  const commandUserId = context['user-id'];
 
-  // If the command is known, let's execute it
-  if (commandName === '!d20') {
-    const num = rollDice(commandName);
+  const mods = [
+    'mtniss',
+    'communicans',
+    'jennyouch',
+    'ludicrouslyliam',
+    'shaynigami',
+    'robindesu',
+    'fuchs_',
+    'totallynotatwork64',
+    'virtrand',
+    'infinitynier',
+    'ludicrouslyluc',
+    'justether',
+    'griffuuu',
+    'inomicecream',
+  ];
+
+  // DICE
+  if (commandName.match(/!d(\d+)/)) {
+    let re = /!d(\d+)/;
+    let result = msg.match(re);
+    let sides = result[1];
+    const num = rollDice(sides);
     client.say(target, `You rolled a ${num}.`);
-    console.log(`* Executed ${commandName} command`);
-  } else if (commandName === '!hype') {
-    client.say(
-      target,
-      `kaetvHeart kaetvHype kaetvHeart kaetvHype kaetvHeart kaetvHype kaetvHeart kaetvHype kaetvHeart kaetvHype kaetvHeart kaetvHype kaetvHeart kaetvHype kaetvHeart kaetvHype kaetvHeart kaetvHype kaetvHeart kaetvHype kaetvHeart kaetvHype kaetvHeart kaetvHype`
-    );
-  } else if (commandName === '!hype2') {
-    client.say(
-      target,
-      `kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype kaetvHype `
-    );
-  } else if (commandName === '!subhype') {
-    client.say(
-      target,
-      `/me ONE OF US! kaetvHype ONE OF US! kaetvHeart ONE OF US! kaetvHype ONE OF US! kaetvHeart ONE OF US! kaetvHype ONE OF US! kaetvHeart ONE OF US! kaetvHype ONE OF US! kaetvHeart`
-    );
-  } else if (commandName === '!kae') {
-    client.say(target, `truuuuuuuuuuuuuuu`);
-  } else if (commandName === '!shub') {
-    client.say(
-      target,
-      `ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat ishubbCat`
-    );
-  } else if (commandName === '!luc') {
-    client.say(
-      target,
-      `https://clips.twitch.tv/TrustworthyFragileSangOMGScoots`
-    );
-  } else if (commandName === '!ether') {
-    client.say(target, `https://www.youtube.com/watch?v=6tfn4uSgY7Y`);
-  } else if (commandName === '!catjam') {
-    client.say(
-      target,
-      `catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM catJAM`
-    );
-  } else {
-    console.log(`* Unknown command ${commandName}`);
+  } else if (commandUserId == kaeId && msg.match(/(\d+)% peepoShy/)) {
+    let re = /(.*),(.*)a (\d+)% peepoShy/;
+    let result = msg.match(re);
+    let user = result[1];
+    let pct = result[3];
+
+    if (result && pct < 50) {
+      client.say(target, `/ban ${user}`);
+
+      setTimeout(async () => {
+        await client.say(target, `/unban ${user}`);
+        if (mods.includes(user)) {
+          client.say(target, `/mod ${user}`);
+        }
+      }, 2000);
+    }
   }
 }
 
 // Function called when the "dice" command is issued
-function rollDice() {
-  const sides = 20;
+function rollDice(sides) {
   return Math.floor(Math.random() * sides) + 1;
 }
 
