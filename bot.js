@@ -54,26 +54,30 @@ function onMessageHandler(target, context, msg, self) {
     'inomicecream',
   ];
 
-  // DICE
+  const userMatch = ['kae_tv', 'kae', 'kaelyn'];
+
   if (commandName.match(/!d(\d+)/)) {
+    // dice
     let re = /!d(\d+)/;
     let result = msg.match(re);
     let sides = result[1];
     const num = rollDice(sides);
     client.say(target, `You rolled a ${num}.`);
   } else if (commandUserId == kaeId && msg.match(/(\d+)% peepoShy/)) {
-    let re = /(.*),(.*)a (\d+)% peepoShy/;
+    // ban bot
+    let re = /(.*), your love compatibility with (.*) is like a (\d+)% peepoShy/;
     let result = msg.match(re);
-    let user = result[1];
-    let pct = result[3];
+    let sender = result[1]; // inomicecream
+    let user = result[2]; // kae_tv
+    let pct = result[3]; // 73
 
-    if (result && pct < 50) {
-      client.say(target, `/ban ${user}`);
+    if (result && userMatch.includes(user) && pct < 50) {
+      client.say(target, `/ban ${sender}`);
 
       setTimeout(async () => {
-        await client.say(target, `/unban ${user}`);
-        if (mods.includes(user)) {
-          client.say(target, `/mod ${user}`);
+        await client.say(target, `/unban ${sender}`);
+        if (mods.includes(sender)) {
+          client.say(target, `/mod ${sender}`);
         }
       }, 2000);
     }
