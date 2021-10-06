@@ -1,4 +1,5 @@
 require('dotenv').config();
+const config = require("./config.json")
 
 const tmi = require('tmi.js');
 
@@ -34,27 +35,12 @@ function onMessageHandler(target, context, msg, self) {
 
   // Remove whitespace from chat message
   const commandName = msg.trim();
-  const kaeId = 513203757;
+  const botTwitchId = config.twitch_id;
   const commandUserId = context['user-id'];
 
-  const mods = [
-    'mtniss',
-    'communicans',
-    'jennyouch',
-    'ludicrouslyliam',
-    'shaynigami',
-    'robindesu',
-    'fuchs_',
-    'totallynotatwork64',
-    'virtrand',
-    'infinitynier',
-    'ludicrouslyluc',
-    'justether',
-    'griffuuu',
-    'inomicecream',
-  ];
+  const mods = config.mods
 
-  const userMatch = ['kae_tv', 'kae', 'kaelyn'];
+  const userMatch = config.targets
 
   if (commandName.match(/!d(\d+)/)) {
     // dice
@@ -63,7 +49,7 @@ function onMessageHandler(target, context, msg, self) {
     let sides = result[1];
     const num = rollDice(sides);
     client.say(target, `You rolled a ${num}.`);
-  } else if (commandUserId == kaeId && msg.match(/(\d+)% peepoShy/)) {
+  } else if (commandUserId == botTwitchId && msg.match(/(\d+)% peepoShy/)) {
     // ban bot
     let re = /(.*), your love compatibility with (.*) is like a (\d+)% peepoShy/;
     let result = msg.match(re);
@@ -71,7 +57,7 @@ function onMessageHandler(target, context, msg, self) {
     let user = result[2]; // kae_tv
     let pct = result[3]; // 73
 
-    if (result && userMatch.includes(user) && pct < 50) {
+    if (result && userMatch.includes(user) && pct < config.thresholds['love_command']) {
       client.say(target, `/ban ${sender}`);
 
       setTimeout(async () => {
@@ -79,7 +65,7 @@ function onMessageHandler(target, context, msg, self) {
         if (mods.includes(sender)) {
           client.say(target, `/mod ${sender}`);
         }
-      }, 2000);
+      }, (1000 * config.timers.unban_timeout) ); // 1000 * seconds = milliseconds
     }
   }
 }
