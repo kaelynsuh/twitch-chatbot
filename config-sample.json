@@ -1,0 +1,34 @@
+{
+    "twitch_id": 513203757,
+
+    "mods": [
+        "mtniss",
+        "communicans",
+        "jennyouch",
+        "ludicrouslyliam",
+        "shaynigami",
+        "robindesu",
+        "fuchs_",
+        "totallynotatwork64",
+        "virtrand",
+        "infinitynier",
+        "ludicrouslyluc",
+        "justether",
+        "griffuuu",
+        "inomicecream"
+    ],
+
+    "targets": [
+        "kae_tv", 
+        "kae", 
+        "kaelyn"
+    ],
+
+    "thresholds": {
+        "love_command": 50
+    },
+
+    "timers": {
+        "unban_timeout": 2
+    }
+}
