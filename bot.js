@@ -30,6 +30,8 @@ client.on('connected', onConnectedHandler);
 // Connect to Twitch:
 client.connect();
 
+const mods = config.mods
+
 // Called every time a message comes in
 function onMessageHandler(target, context, msg, self) {
   console.log('target', target);
@@ -52,9 +54,6 @@ function onMessageHandler(target, context, msg, self) {
   console.log('userId', userId);
   console.log('////////////////////////////');
 
-
-  const mods = config.mods
-
   const userMatch = config.targets
 
   // dice
@@ -70,6 +69,7 @@ function onMessageHandler(target, context, msg, self) {
   // ban bot
   // TODO: make sure userId matches the bots listed somewhere
   // but I dont want to provide a bot id.. maybe the username
+
   if (msg.match(/(\d+)% peepoShy/)) {
     let re = /(.*), your love compatibility with (.*) is like a (\d+)% peepoShy/;
     let result = msg.match(re);
@@ -86,16 +86,49 @@ function onMessageHandler(target, context, msg, self) {
           if (mods.includes(sender)) {
             client.say(target, `/mod ${sender}`);
           }
-        }, (1000 * config.timers.ban_countdown) ); 
+        }, (1000 * config.timers.ban_duration) ); 
 
-      }, (1000 * config.timers.ban_duration) ); // 1000 * seconds = milliseconds
+      }, (1000 * config.timers.ban_countdown) ); // 1000 * seconds = milliseconds
     }
+  }
+
+  if (msg.includes("KEKW")) {
+    console.log('context.username', context.username);
+    let sender = context.username
+
+    banUser(target, sender)
+
+    // setTimeout(async () => {
+    //   await client.say(target, `/ban ${sender}`);
+
+    //   setTimeout(async () => {
+    //     await client.say(target, `/unban ${sender}`);
+    //     if (mods.includes(sender)) {
+    //       client.say(target, `/mod ${sender}`);
+    //     }
+    //   }, (1000 * config.timers.ban_duration) ); 
+
+    // }, (1000 * config.timers.ban_countdown) ); // 1000 * seconds = milliseconds
   }
 }
 
 // Function called when the "dice" command is issued
 function rollDice(sides) {
   return Math.floor(Math.random() * sides) + 1;
+}
+
+function banUser (target, sender) {
+  setTimeout(async () => {
+    await client.say(target, `/ban ${sender}`);
+
+    setTimeout(async () => {
+      await client.say(target, `/unban ${sender}`);
+      if (mods.includes(sender)) {
+        client.say(target, `/mod ${sender}`);
+      }
+    }, (1000 * config.timers.ban_duration) ); 
+
+  }, (1000 * config.timers.ban_countdown) ); // 1000 * seconds = milliseconds
 }
 
 // Called every time the bot connects to Twitch chat
