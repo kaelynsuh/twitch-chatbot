@@ -30,8 +30,6 @@ client.on('connected', onConnectedHandler);
 // Connect to Twitch:
 client.connect();
 
-const mods = config.mods
-
 // Called every time a message comes in
 function onMessageHandler(target, context, msg, self) {
   console.log('target', target);
@@ -78,17 +76,8 @@ function onMessageHandler(target, context, msg, self) {
     let pct = result[3]; // 73
 
     if (result && userMatch.includes(user) && pct < config.thresholds['pass']) {
-      setTimeout(async () => {
-        await client.say(target, `/ban ${sender}`);
 
-        setTimeout(async () => {
-          await client.say(target, `/unban ${sender}`);
-          if (mods.includes(sender)) {
-            client.say(target, `/mod ${sender}`);
-          }
-        }, (1000 * config.timers.ban_duration) ); 
-
-      }, (1000 * config.timers.ban_countdown) ); // 1000 * seconds = milliseconds
+      banUser(target, sender)
     }
   }
 
@@ -97,18 +86,6 @@ function onMessageHandler(target, context, msg, self) {
     let sender = context.username
 
     banUser(target, sender)
-
-    // setTimeout(async () => {
-    //   await client.say(target, `/ban ${sender}`);
-
-    //   setTimeout(async () => {
-    //     await client.say(target, `/unban ${sender}`);
-    //     if (mods.includes(sender)) {
-    //       client.say(target, `/mod ${sender}`);
-    //     }
-    //   }, (1000 * config.timers.ban_duration) ); 
-
-    // }, (1000 * config.timers.ban_countdown) ); // 1000 * seconds = milliseconds
   }
 }
 
@@ -123,7 +100,7 @@ function banUser (target, sender) {
 
     setTimeout(async () => {
       await client.say(target, `/unban ${sender}`);
-      if (mods.includes(sender)) {
+      if (config.mods.includes(sender)) {
         client.say(target, `/mod ${sender}`);
       }
     }, (1000 * config.timers.ban_duration) ); 
